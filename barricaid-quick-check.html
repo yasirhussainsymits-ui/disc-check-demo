@@ -1,0 +1,219 @@
+<!-- ============ BARRICAID 60-SECOND DISC CHECK (WordPress Custom HTML block) ============
+     Paste this whole file into a Gutenberg "Custom HTML" block or Elementor "HTML" widget.
+     Surgeons are pulled LIVE from the same StoreRocket list used on /surgeon-locator/.
+======================================================================================== -->
+<div id="bqc">
+<style>
+#bqc{--navy:#192882;--teal:#008094;--teal-l:#add6dd;--blue:#0092ef;--ink:#2b2f45;--txt:#5c5c5c;--muted:#556068;--line:#d5dadf;--soft:#f4f7fb;--tint:#eef0f9;--red:#c62828;--green:#008094;
+ font-family:Rubik,"Helvetica Neue",Arial,sans-serif;font-weight:300;color:var(--txt);line-height:1.55;max-width:720px;margin:0 auto}
+#bqc *,#bqc *:before,#bqc *:after{box-sizing:border-box}
+#bqc h2,#bqc h3,#bqc p{margin:0;padding:0;font-family:inherit;text-transform:none;letter-spacing:normal}
+#bqc b,#bqc strong{font-weight:500;color:var(--ink)}
+#bqc button,#bqc input{font-family:inherit;margin:0;box-shadow:none;text-transform:none;letter-spacing:normal;line-height:1.3}
+#bqc button{cursor:pointer}
+#bqc .card{background:#fff;border:1px solid var(--line);box-shadow:0 14px 40px rgba(25,40,130,.10);overflow:hidden}
+#bqc .top{background:var(--navy);padding:22px 26px 0;color:#fff;position:relative;overflow:hidden}
+#bqc .top:after{content:"";position:absolute;right:-40px;top:-30px;width:190px;height:190px;background:linear-gradient(135deg,rgba(0,128,148,.55),rgba(0,146,239,.15));transform:rotate(45deg)}
+#bqc .top>*{position:relative;z-index:1}
+#bqc .logo{display:block;width:132px;height:auto;color:#fff;margin-bottom:14px}
+#bqc .top h2{font-family:Roboto,Arial,sans-serif;font-size:24px;font-weight:600;color:#fff;line-height:1.2}
+#bqc .top p{font-size:14.5px;color:#fff;opacity:.85;margin-top:5px}
+#bqc .dots{display:flex;gap:4px;margin:18px -26px 0}
+#bqc .dots i{flex:1;height:5px;background:rgba(255,255,255,.18);transition:background .3s}
+#bqc .dots i.on{background:var(--teal)}
+#bqc .body{padding:26px}
+#bqc .step{font-size:12px;font-weight:500;color:var(--teal);text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px}
+#bqc .q{font-family:Roboto,Arial,sans-serif;font-size:21px;font-weight:600;color:var(--navy);margin-bottom:4px;line-height:1.3}
+#bqc .hint{font-size:14px;color:var(--muted);margin-bottom:16px}
+#bqc .opts{display:grid;gap:9px}
+#bqc .opt{display:flex;gap:14px;align-items:center;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-left:4px solid var(--line);border-radius:0;padding:13px 15px;font-size:15.5px;font-weight:400;color:var(--ink);transition:all .15s}
+#bqc .opt:hover{border-color:var(--teal-l);border-left-color:var(--teal);background:var(--soft)}
+#bqc .opt.on{border-color:var(--navy);border-left-color:var(--navy);background:var(--tint);color:var(--navy);font-weight:500}
+#bqc .opt .ic{flex:0 0 38px;height:38px;background:var(--tint);color:var(--navy);display:flex;align-items:center;justify-content:center}
+#bqc .opt.on .ic{background:var(--navy);color:#fff}
+#bqc .opt .ic svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#bqc .opt.red-o .ic{background:#fdecea;color:var(--red)}
+#bqc .opt small{display:block;font-weight:300;color:var(--muted);font-size:13px}
+#bqc .scale{display:grid;grid-template-columns:repeat(11,1fr);gap:4px}
+#bqc .sc{border:1px solid var(--line);background:#fff;border-radius:0;padding:13px 0;font-weight:500;font-size:15px;color:var(--navy)}
+#bqc .sc:hover{border-color:var(--teal)}
+#bqc .sc.on{color:#fff;border-color:transparent}
+#bqc .sl{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:7px}
+#bqc .zip{display:flex;gap:8px;margin-top:4px}
+#bqc .zip input{flex:1;min-width:0;border:1px solid var(--line);border-radius:0;padding:14px 16px;font-size:17px;color:var(--ink);background:#fff;font-weight:400}
+#bqc .zip input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(25,40,130,.12)}
+#bqc .btn{border:0;border-radius:0;padding:14px 26px;font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;background:var(--navy);color:#fff;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;transition:background .15s}
+#bqc .btn:hover{background:var(--teal);color:#fff}
+#bqc .btn.tl{background:var(--teal)}
+#bqc .btn.tl:hover{background:var(--navy)}
+#bqc .btn.gh{background:#fff;color:var(--navy);border:1px solid var(--navy)}
+#bqc .btn.gh:hover{background:var(--tint)}
+#bqc .btn[disabled]{opacity:.4;cursor:default}
+#bqc .nav{display:flex;justify-content:space-between;align-items:center;margin-top:22px}
+#bqc .link{background:none;border:0;color:var(--muted);font-size:14px;padding:6px 0;text-decoration:underline;text-underline-offset:3px}
+#bqc .link:hover{color:var(--navy)}
+#bqc .err{color:var(--red);font-size:13px;margin-top:6px;min-height:18px}
+#bqc .alert{background:#fdecea;border-left:4px solid var(--red);padding:16px;color:#7f1d1d;margin-bottom:20px;font-size:14.5px}
+#bqc .alert b{color:var(--red)}
+#bqc .badge{display:inline-block;padding:5px 12px;font-size:11.5px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;background:var(--teal);color:#fff}
+#bqc .rt{font-family:Roboto,Arial,sans-serif;font-size:25px;font-weight:600;color:var(--navy);margin:12px 0 8px;line-height:1.25}
+#bqc .rd{font-size:15.5px}
+#bqc .sec{margin-top:26px}
+#bqc .sec h3{font-family:Roboto,Arial,sans-serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--navy);display:flex;justify-content:space-between;align-items:baseline}
+#bqc .sec h3 span{font-family:Rubik,Arial,sans-serif;font-size:12.5px;color:var(--teal);font-weight:500}
+#bqc .ck{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:#fff;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:12px 4px;font-size:15px;font-weight:400;color:var(--ink)}
+#bqc .ck:hover{background:var(--soft)}
+#bqc .ck .b{flex:0 0 20px;height:20px;border:2px solid var(--navy);margin-top:1px;position:relative;background:#fff}
+#bqc .ck.on .t{text-decoration:line-through;color:var(--muted)}
+#bqc .ck.on .b{background:var(--teal);border-color:var(--teal)}
+#bqc .ck.on .b:after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+#bqc .doc{display:flex;gap:14px;align-items:center;border:1px solid var(--line);border-left:4px solid var(--teal);padding:14px;margin-bottom:8px;background:#fff}
+#bqc .av{flex:0 0 46px;height:46px;border-radius:50%;background:var(--navy);color:#fff;font-weight:500;display:flex;align-items:center;justify-content:center;font-size:15px}
+#bqc .di{flex:1;min-width:0}
+#bqc .dn{font-family:Roboto,Arial,sans-serif;font-weight:600;color:var(--navy);font-size:15.5px}
+#bqc .da{font-size:13px;color:var(--muted)}
+#bqc .dm{font-size:12.5px;font-weight:500;color:var(--teal);white-space:nowrap}
+#bqc .doc a{font-size:12.5px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--navy);text-decoration:none;white-space:nowrap;border-bottom:2px solid var(--teal);padding-bottom:1px}
+#bqc .bc{margin-top:26px;padding:20px;background:var(--navy);color:#fff;font-size:14.5px;position:relative;overflow:hidden}
+#bqc .bc:after{content:"";position:absolute;right:-50px;bottom:-60px;width:150px;height:150px;background:rgba(0,128,148,.45);transform:rotate(45deg)}
+#bqc .bc>*{position:relative;z-index:1}
+#bqc .bc b{color:#fff}
+#bqc .bc .logo{width:110px;margin-bottom:10px}
+#bqc .bc p{color:#fff;opacity:.92}
+#bqc .row{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+#bqc .fine{font-size:11.5px;color:var(--muted);margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+#bqc .fine a{color:var(--navy)}
+#bqc .fade{animation:bqcIn .3s ease}
+@keyframes bqcIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media(max-width:600px){#bqc .body{padding:20px 16px}#bqc .top{padding:18px 16px 0}#bqc .dots{margin:16px -16px 0}#bqc .sc{padding:10px 0;font-size:13px}#bqc .scale{gap:2px}#bqc .doc{flex-wrap:wrap}#bqc .rt{font-size:21px}#bqc .q{font-size:19px}#bqc .btn{padding:13px 18px;width:100%}#bqc .zip{flex-direction:column}}
+</style>
+<div class="card">
+ <div class="top"><svg class="logo" viewBox="0 0 203.98 27.33" aria-label="Barricaid" role="img"><path fill="currentColor" d="M44.24,26.85,42.3,21.74H30.18l-1.94,5.11H23L33.35.44h5.780L49.51,26.85Zm-8-21.78L31.49,17.66H41Zm65.94,21.78V.44h4.63V26.85Zm9.11-13.19C111.29,5.51,117.35,0,125.150,0a11.86,11.86,0,0,1,10.58,5.9L131.8,8a7.79,7.79,0,0,0-6.65-3.84c-5.23,0-9.11,4-9.110,9.540s3.880,9.550,9.110,9.550a7.88,7.88,0,0,0,6.65-3.84l4,2a12,12,0,0,1-10.61,6C117.35,27.33,111.29,21.78,111.29,13.66Zm46.5,13.19-1.94-5.11H143.73l-1.94,5.11h-5.27L146.89.44h5.79l10.37,26.41Zm-8-21.78L145,17.66h9.51ZM165.9,26.85V.44h4.64V26.85ZM186,.44h-9.82v4.1H186c5.86,0,9,4,9,9.08s-3.32,9.15-9.07,9.150H180.8V5.64l-4.64,4.63V26.85H186c8.24,0,13.79-5.42,13.79-13.23S194.26.44,186,.44ZM15.92,13.23a6,6,0,0,0,4.6-6.06C20.52,3.45,17.86.44,13,.44H0V4.51H12.08a3.34,3.34,0,0,1,3.68,3.41c0,2-1.34,3.41-3.68,3.41H4.63V5.64L0,10.27V26.85H13.35c5,0,7.68-3.05,7.68-7.17A6.44,6.44,0,0,0,15.920,13.23Zm-3.64,9.54H4.63V15.41h7.65a3.65,3.65,0,0,1,4,3.68C16.28,21.39,14.77,22.77,12.28,22.77Zm54.06-6.29a7.43,7.43,0,0,0,6.29-7.77C72.63,3.8,69.19.44,64,.44H52.36V26.85H57V4.51h6.38c2.61,0,4.51,1.63,4.51,4.16a4.17,4.17,0,0,1-4.51,4.24H61.59V17h0l5.83,9.86h5.38Zm24.91,0a7.440,7.440,0,0,0,6.3-7.77C97.55,3.8,94.1.44,88.87.44H77.27V26.85H81.9V4.51h6.38c2.61,0,4.51,1.630,4.51,4.160a4.17,4.17,0,0,1-4.51,4.24H86.5V17h0l5.82,9.86h5.38Z"/></svg><h2>60-Second Disc Check</h2><p>4 quick taps. Get your next-step checklist and Barricaid surgeons near you.</p><div class="dots" id="bqc-dots"></div></div>
+ <div class="body" id="bqc-body"></div>
+</div>
+<script>
+(function(){
+var CFG={storeId:"Or850dzJNM",locator:"https://barricaid.com/surgeon-locator/",learn:"https://barricaid.com/patient/",ifu:"https://barricaid.com/instructions-for-use/",phone:"844-288-7474",show:3};
+var Q=[
+ {id:"sit",t:"one",q:"What best describes you right now?",o:[
+   ["sci",'<svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>',"Pain shooting down my leg","Sciatica — no back surgery yet"],
+   ["rec",'<svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="1"/><path d="M9 4V2h6v2M9 11h6M9 15h4"/></svg>',"Herniated disc — surgery recommended","Or my discectomy is already scheduled"],
+   ["back",'<svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>',"I had disc surgery, and the pain came back","Previous discectomy / microdiscectomy"],
+   ["lbp",'<svg viewBox="0 0 24 24"><path d="M12 3v18M9 6h6M8 10h8M9 14h6M10 18h4"/></svg>',"Mostly lower back pain","Little or no pain in the leg"]]},
+ {id:"pain",t:"scale",q:"How bad is your pain right now?",h:"0 = no pain · 10 = worst imaginable"},
+ {id:"dur",t:"one",q:"How long has this been going on?",o:[
+   ["new",'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',"Less than 6 weeks",""],
+   ["fail",'<svg viewBox="0 0 24 24"><path d="M3 7l6 6 4-4 8 8"/><path d="M21 11v6h-6"/></svg>',"6+ weeks — therapy / meds / injections didn't help enough",""],
+   ["long",'<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',"6+ weeks — haven't tried much treatment yet",""]]},
+ {id:"sx",t:"many",q:"Do you have any of these?",h:"Tap all that apply",o:[
+   ["numb",'<svg viewBox="0 0 24 24"><path d="M3 12h3l2-5 3 10 2-6 2 3h6"/></svg>',"Numbness or tingling in leg / foot",""],
+   ["weak",'<svg viewBox="0 0 24 24"><path d="M12 4v14M6 12l6 6 6-6"/></svg>',"Weakness — foot drags or leg gives way",""],
+   ["sit",'<svg viewBox="0 0 24 24"><path d="M7 3v9h10M7 12v9M17 12v9M7 16h10"/></svg>',"Worse when sitting, bending or coughing",""],
+   ["red",'<svg viewBox="0 0 24 24"><path d="M12 3 2 21h20z"/><path d="M12 10v5M12 18v.5"/></svg>',"Loss of bladder / bowel control, or numb groin area",""],
+   ["none",'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>',"None of these",""]]},
+ {id:"zip",t:"zip",q:"Where are you located?",h:"Enter your US ZIP code to see Barricaid surgeons near you."}
+];
+var A={sx:[]},i=0,root=document.getElementById("bqc"),SURG=null,LOGO=root.querySelector(".logo").outerHTML;
+function $(s){return root.querySelector(s)}
+function col(n){return "hsl("+(120-n*12)+",70%,42%)"}
+function dots(){var h="";for(var k=0;k<Q.length;k++)h+='<i class="'+(k<=i?"on":"")+'"></i>';$("#bqc-dots").innerHTML=h}
+function goTop(){var r=root.getBoundingClientRect();if(r.top<0)window.scrollTo({top:window.pageYOffset+r.top-90,behavior:"smooth"})}
+
+/* preload surgeon list in background */
+function loadSurg(){if(SURG)return Promise.resolve(SURG);
+  return fetch("https://storerocket.io/api/user/"+CFG.storeId+"/locations").then(function(r){return r.json()}).then(function(d){
+    SURG=((d.results&&d.results.locations)||[]).filter(function(x){return x.visible!==false&&x.lat&&x.lng});return SURG})}
+loadSurg().catch(function(){});
+
+function draw(){
+  dots();var q=Q[i],h='<div class="fade"><div class="step">'+(q.t==="zip"?"Last step":"Question "+(i+1)+" of 4")+'</div><div class="q">'+q.q+'</div>'+(q.h?'<div class="hint">'+q.h+'</div>':'<div class="hint"></div>');
+  if(q.t==="scale"){h+='<div class="scale">';for(var n=0;n<=10;n++){var on=A.pain===n;h+='<button type="button" class="sc'+(on?" on":"")+'" data-v="'+n+'" style="'+(on?"background:"+col(n):"")+'">'+n+'</button>'}h+='</div><div class="sl"><span>No pain</span><span>Worst</span></div>'}
+  else if(q.t==="zip"){h+='<div class="zip"><input id="bqc-zip" inputmode="numeric" maxlength="5" placeholder="e.g. 90210" value="'+(A.zip||"")+'"><button class="btn" id="bqc-go">Show results</button></div><div class="err" id="bqc-err"></div>'}
+  else{h+='<div class="opts">';q.o.forEach(function(o){var on=q.t==="many"?A.sx.indexOf(o[0])>-1:A[q.id]===o[0];
+    h+='<button type="button" class="opt'+(o[0]==="red"&&q.t==="many"?" red-o":"")+(on?" on":"")+'" data-v="'+o[0]+'"><span class="ic">'+o[1]+'</span><span>'+o[2]+(o[3]?'<small>'+o[3]+'</small>':'')+'</span></button>'});h+='</div>'}
+  h+='<div class="nav">'+(i>0?'<button class="link" id="bqc-back">← Back</button>':'<span></span>')+(q.t==="many"?'<button class="btn" id="bqc-next"'+(A.sx.length?"":" disabled")+'>Next →</button>':'')+(q.t==="zip"?'<button class="link" id="bqc-skip">Skip — no ZIP</button>':'')+'</div></div>';
+  $("#bqc-body").innerHTML=h;
+  if($("#bqc-back"))$("#bqc-back").onclick=function(){i--;draw()};
+  root.querySelectorAll(".opt,.sc").forEach(function(b){b.onclick=function(){
+    var v=b.getAttribute("data-v");
+    if(q.t==="scale"){A.pain=+v;draw();setTimeout(function(){i++;draw()},220);return}
+    if(q.t==="one"){A[q.id]=v;draw();setTimeout(function(){i++;draw()},220);return}
+    if(v==="none")A.sx=A.sx.indexOf("none")>-1?[]:["none"];
+    else{A.sx=A.sx.filter(function(x){return x!=="none"});var k=A.sx.indexOf(v);k>-1?A.sx.splice(k,1):A.sx.push(v)}
+    draw()}});
+  if($("#bqc-next"))$("#bqc-next").onclick=function(){i++;draw()};
+  if(q.t==="zip"){var inp=$("#bqc-zip");inp.focus();
+    var go=function(){var z=inp.value.trim();if(!/^\d{5}$/.test(z)){$("#bqc-err").textContent="Please enter a 5-digit US ZIP code.";return}A.zip=z;result()};
+    $("#bqc-go").onclick=go;inp.onkeydown=function(e){if(e.key==="Enter")go()};
+    $("#bqc-skip").onclick=function(){A.zip="";result()}}
+}
+
+/* ---------- logic ---------- */
+function stage(){
+  var s=A.sit,d=A.dur,nerve=A.sx.indexOf("numb")>-1||A.sx.indexOf("weak")>-1||A.sx.indexOf("sit")>-1;
+  if(s==="back")return"rehern";
+  if(s==="rec")return"presurg";
+  if(s==="lbp"&&!nerve)return"notdisc";
+  if(d==="fail")return"consult";
+  if(d==="long")return"conserv";
+  return"early";
+}
+var ST={
+ early:{b:"Early stage",t:"Likely sciatica — give it a few weeks with the right care",d:"Most leg pain from a herniated disc improves within 6–12 weeks without surgery. Here's how to make the most of that window, and when to escalate.",
+   c:["See a doctor for an exam and confirm it's a nerve / disc issue","Start a guided physical therapy program","Stay gently active — short walks, avoid long bed rest","Use pain or anti-inflammatory medicine only as your doctor advises","Track your leg pain daily (0–10) to spot if it's not improving","Book a spine specialist if there's no improvement by week 6"]},
+ conserv:{b:"Try treatment first",t:"Your symptoms fit a herniated disc — try proper treatment first",d:"You've had symptoms for 6+ weeks but haven't had a full trial of treatment yet. Surgeons usually want this first — and many people improve with it.",
+   c:["Get an MRI of your lower back (ask your doctor)","Do 4–6 weeks of physical therapy","Ask your doctor whether an epidural steroid injection is an option","Keep a pain & activity diary to share at your next visit","If you're not better after treatment, book a spine surgeon consultation"]},
+ consult:{b:"Ready for a surgeon consult",t:"It's time to see a spine surgeon",d:"Leg pain lasting 6+ weeks that hasn't responded to treatment is when a microdiscectomy evaluation is commonly recommended. Go in prepared:",
+   c:["Book a consultation with a spine surgeon near you (see below)","Bring your MRI images and report — or ask for one","List every treatment you've tried and how long","Ask: \"Am I a candidate for a microdiscectomy?\"","Ask: \"What is my risk of the disc herniating again?\"","Ask: \"Do you use Barricaid if you find a large hole in the disc wall?\"","Check your insurance coverage for spine surgery"]},
+ presurg:{b:"Before your surgery",t:"Before your discectomy — make sure you ask about Barricaid",d:"During a discectomy, some patients are found to have a large hole (annular defect) in the disc wall, which raises the risk of the disc herniating again. Barricaid is designed to close that hole.",
+   c:["Ask your surgeon: \"What's my risk of reherniation?\"","Ask: \"If you find a large annular defect, will you use Barricaid?\"","If your surgeon doesn't offer Barricaid, consider a second opinion (see surgeons below)","Confirm insurance pre-authorization for the procedure","Plan 1–2 weeks of help at home and time off work","Ask about the recovery & activity plan after surgery"]},
+ rehern:{b:"Possible reherniation",t:"Pain coming back after a discectomy needs a surgeon's review",d:"When symptoms return after a discectomy, the disc may have herniated again through the same hole in the disc wall. This is exactly the problem Barricaid was designed to help prevent.",
+   c:["Book a spine surgeon appointment soon — don't wait it out","Ask for a new MRI (often with contrast) to compare with the old one","Bring your previous operative report and MRI","Ask: \"Has my disc reherniated?\"","Ask: \"If I need another discectomy, can Barricaid be used to close the defect?\"","Ask about all options, including revision discectomy vs. other procedures"]},
+ notdisc:{b:"Probably not a disc herniation",t:"Your symptoms don't point strongly to a herniated disc",d:"Back pain without leg symptoms usually comes from muscles, joints or ligaments, and is rarely treated with disc surgery. If pain starts shooting down your leg, take this check again.",
+   c:["Stay active and avoid long bed rest","Try a physical therapy / core-strength program","Use heat and over-the-counter relief as your doctor advises","See your doctor if it's not better in 4–6 weeks","See a doctor sooner if leg pain, numbness or weakness appears"]}
+};
+function miles(a,b,c,d){var R=3958.8,r=Math.PI/180,x=Math.sin((c-a)*r/2),y=Math.sin((d-b)*r/2);var h=x*x+Math.cos(a*r)*Math.cos(c*r)*y*y;return 2*R*Math.asin(Math.sqrt(h))}
+function initials(n){return n.replace(/,.*$/,"").replace(/^Dr\.?\s*/i,"").split(/\s+/).filter(Boolean).map(function(w){return w[0]}).slice(0,2).join("").toUpperCase()}
+function esc(s){return String(s||"").replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function surgeonsHtml(list,place){
+  if(!list.length)return'<p class="hint">We couldn\'t load nearby surgeons right now.</p>';
+  return list.map(function(s){var u=s.url&&/^https?:/i.test(s.url)?s.url:CFG.locator;
+    return'<div class="doc"><div class="av">'+esc(initials(s.name))+'</div><div class="di"><div class="dn">'+esc(s.name)+'</div><div class="da">'+esc([s.city,s.state].filter(Boolean).join(", "))+'</div></div>'+
+    (s._mi!=null?'<span class="dm">'+Math.round(s._mi)+' mi</span>':'')+'<a href="'+esc(u)+'" target="_blank" rel="noopener">View →</a></div>'}).join("")+
+    '<p class="hint" style="margin-top:4px">Showing the closest Barricaid surgeons'+(place?' to '+esc(place):'')+'.</p>';
+}
+function result(){
+  i=Q.length-1;dots();
+  var key=stage(),S=ST[key],red=A.sx.indexOf("red")>-1,urg=red||A.sx.indexOf("weak")>-1;
+  var h='<div class="fade">'+
+   (red?'<div class="alert"><b>⚠ Seek emergency care now.</b> Loss of bladder/bowel control or numbness in the groin can mean severe nerve compression (cauda equina syndrome). Go to the nearest ER or call 911.</div>':'')+
+   '<span class="badge">'+S.b+' · Pain '+A.pain+'/10</span><div class="rt">'+S.t+'</div><p class="rd">'+S.d+'</p>'+
+   (A.sx.indexOf("weak")>-1&&!red?'<p class="rd" style="margin-top:8px;color:#c62828"><b>You reported leg/foot weakness</b> — please see a doctor promptly rather than waiting.</p>':'')+
+   '<div class="sec"><h3>Your checklist <span id="bqc-cnt">0/'+S.c.length+' done</span></h3><div id="bqc-list">'+
+     S.c.map(function(c,k){return'<button type="button" class="ck" data-k="'+k+'"><span class="b"></span><span class="t">'+esc(c)+'</span></button>'}).join("")+'</div></div>'+
+   (key!=="notdisc"?'<div class="sec"><h3>Barricaid surgeons near you</h3><div id="bqc-docs"><p class="hint">Finding surgeons'+(A.zip?' near '+A.zip:'')+'…</p></div></div>':'')+
+   (key!=="notdisc"&&key!=="early"?'<div class="bc">'+LOGO+'<p><b>An</b> FDA-approved, bone-anchored implant placed during a lumbar discectomy (L4–S1) to close a large hole in the disc wall. It is the first device clinically proven to reduce reherniation and reoperation in patients with large annular defects. Only your surgeon can determine during surgery whether you qualify.</p><div class="row" style="margin-top:14px"><a class="btn tl" href="'+CFG.learn+'">How Barricaid works</a></div></div>':'')+
+   '<div class="row">'+(key!=="notdisc"?'<a class="btn" href="'+CFG.locator+'">See all surgeons on map</a>':'')+'<button class="btn gh" id="bqc-copy">Copy my checklist</button><button class="btn gh" id="bqc-re">Start over</button></div>'+
+   '<p class="fine">Educational only — not a diagnosis or medical advice. Talk to a qualified physician about your condition. All medical devices have risks; see the <a href="'+CFG.ifu+'" target="_blank" rel="noopener">Instructions for Use</a>. Questions? Call <a href="tel:'+CFG.phone.replace(/\D/g,"")+'">'+CFG.phone+'</a>.</p></div>';
+  $("#bqc-body").innerHTML=h;goTop();
+  var done=[];
+  root.querySelectorAll(".ck").forEach(function(b){b.onclick=function(){b.classList.toggle("on");var k=+b.getAttribute("data-k"),p=done.indexOf(k);p>-1?done.splice(p,1):done.push(k);$("#bqc-cnt").textContent=done.length+"/"+S.c.length+" done"}});
+  $("#bqc-re").onclick=function(){A={sx:[]};i=0;draw();goTop()};
+  $("#bqc-copy").onclick=function(){var t="My next steps — "+S.t+"\n\n"+S.c.map(function(c){return"☐ "+c}).join("\n")+"\n\nFind a Barricaid surgeon: "+CFG.locator;
+    var ok=function(){$("#bqc-copy").textContent="✓ Copied"};
+    if(navigator.clipboard)navigator.clipboard.writeText(t).then(ok,ok);else ok()};
+  try{window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:"bqc_complete",bqc_stage:key,bqc_pain:A.pain,bqc_red_flag:red})}catch(e){}
+  if(key==="notdisc")return;
+  /* nearest surgeons */
+  var geo=A.zip?fetch("https://api.zippopotam.us/us/"+A.zip).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(z){var p=z.places[0];return{lat:+p.latitude,lng:+p.longitude,label:p["place name"]+", "+p["state abbreviation"]}}).catch(function(){return null}):Promise.resolve(null);
+  Promise.all([loadSurg(),geo]).then(function(r){
+    var L=r[0].slice(),g=r[1];
+    if(g){L.forEach(function(s){s._mi=miles(g.lat,g.lng,parseFloat(s.lat),parseFloat(s.lng))});L.sort(function(a,b){return a._mi-b._mi})}
+    else{L.forEach(function(s){s._mi=null});L.sort(function(a,b){return(a.priority||0)-(b.priority||0)})}
+    $("#bqc-docs").innerHTML=(A.zip&&!g?'<p class="hint">We couldn\'t find that ZIP — showing featured surgeons instead.</p>':'')+surgeonsHtml(g?L.slice(0,CFG.show):L.slice(0,CFG.show),g&&g.label);
+  }).catch(function(){$("#bqc-docs").innerHTML='<p class="hint">Couldn\'t load surgeons right now. <a href="'+CFG.locator+'">Open the surgeon locator →</a></p>'});
+}
+draw();
+})();
+</script>
+</div>
